@@ -118,3 +118,30 @@ POKEMON *desempilha(PILHA *p){// cava o deck
         return 0;
     }
 }
+
+//ESTA COM ALGUM ERRO
+//Enche o deck com os pokemon da pokedex
+/*PILHA* enche_deck(){
+	PILHA* p = cria_pilha();
+	LISTAE* l = cria_lista();
+	FILE *pArq;
+	pArq = fopen("pokedex.bin", "rb");
+	if(pArq == NULL){
+		printf("Erro ao abrir arquivo\n");
+		exit(1);
+	}
+	
+	int cont = 0;
+	while(getc(pArq) != EOF){				//Loop enquanto não chegar ao fim do arquivo
+		POKEMON temp;
+		fseek(pArq, cont*sizeof(POKEMON), SEEK_SET);
+		fread(&temp, sizeof(POKEMON), 1, pArq);
+		insere_fim(l, temp);
+		cont++;
+	}
+	fclose(pArq);
+	
+	//FALTA RETIRAR DA LISTA E JOGAR NA PILHA
+	destroi_listase(l);
+	return p;
+}*/

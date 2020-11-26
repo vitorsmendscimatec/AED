@@ -29,7 +29,10 @@ int main(){
     bulbasaur = cria_pokemon("Bulbasaur", "Grass", 35, TACKLE, VINE);
     SSsquirtleSS = cria_pokemon("SSSquirtleSS", "Water", 35, TACKLE, BUBBLES);
     
-
+	l = enche_lista();
+	print_lista(l);
+	NOL* aux = *l;
+	printf("dano %d\n", aux->dados.atk[0].dano);
     //del_all();
     //sobrescreve(*SSsquirtleSS, 1);
     //registra(SSsquirtleSS);

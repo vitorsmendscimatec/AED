@@ -5,11 +5,13 @@
 #include <string.h>
 #include <time.h>//necessário p/ função time()
 #include <conio.h>
+#include <locale.h>
+#include <unistd.h>
+#include <windows.h>
 
-#include "ataque_struct.h"
-#include "pokemon_struct.h"
+#include "struct_pokemon.h"
 #include "lista_enc.h"
-#include "deck.h"
-#include "registro_arquivo.h"
-#include "mao.h"
-
+#include "arquivo.h"
+#include "struct_mao.h"
+#include "struct_cemiterio.h"
+//#include "interface.h"

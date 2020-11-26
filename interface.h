@@ -1,13 +1,3 @@
-#include <stdio.h>
-#include <locale.h>
-#include <conio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
-#include <unistd.h>
-#include <windows.h>
-#include "structs.h"
-
 //adicionar na entrada do jogo duas variaveis para o nome dos jogadores.
 
 void pikachu(){
@@ -65,7 +55,7 @@ printf("SEJA BEM VINDO AO POKEMON LAPA EDITION\n\n                              
 scanf("%d", &a);
 system("cls");
 if(a==1 || a==2 || a==3)return a;
-else printf("%sComando inv?lido!", center); sleep(1); iniciar();
+else printf("%sComando inválido!", center); sleep(1); iniciar();
 }
 
 void endgame(){
