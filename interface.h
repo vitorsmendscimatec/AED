@@ -1,3 +1,4 @@
+
 //adicionar na entrada do jogo duas variaveis para o nome dos jogadores.
 
 void pikachu(){
@@ -55,7 +56,7 @@ printf("SEJA BEM VINDO AO POKEMON LAPA EDITION\n\n                              
 scanf("%d", &a);
 system("cls");
 if(a==1 || a==2 || a==3)return a;
-else printf("%sComando inválido!", center); sleep(1); iniciar();
+else printf("%sComando inv?lido!", center); sleep(1); iniciar();
 }
 
 void endgame(){
@@ -76,7 +77,7 @@ Mao* digitenome1(void){
 Mao *m1;
 m1 = criarMao();
 printf("Digite o nome do Player 1: ");
-scanf(" %[^\n]", &m1->player);
+scanf(" %[^\n]", &m1->nome);
 fflush(stdin);
 return m1;
 }
@@ -85,7 +86,7 @@ Mao* digitenome2(void){
 Mao *m2;
 m2 = criarMao();
 printf("Digite o nome do Player 2: ");
-scanf(" %[^\n]", &m2->player);
+scanf(" %[^\n]", &m2->nome);
 fflush(stdin);
 return m2;
 }

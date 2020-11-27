@@ -1,6 +1,6 @@
 #define TAM 6
 
-typedef struct{ //MÃ£o, coloquei 6 pokemons mas foi sÃ³ pra teste
+typedef struct{ //Mão, coloquei 6 pokemons mas foi só pra teste
 	int cont;
 	POKEMON *pokemon[TAM];   
 } Mao;
