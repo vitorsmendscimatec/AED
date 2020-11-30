@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <time.h>//necessário p/ função time()
+#include <time.h>//necessï¿½rio p/ funï¿½ï¿½o time()
 #include <conio.h>
 #include <locale.h>
 #include <unistd.h>
@@ -14,4 +14,4 @@
 #include "arquivo.h"
 #include "struct_mao.h"
 #include "struct_cemiterio.h"
-//#include "interface.h"
+#include "interface.h"

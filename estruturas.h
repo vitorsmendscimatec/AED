@@ -45,7 +45,7 @@ int compara_vantagens(char *tipopk1, char *tipopk2){ // compara atks, retorna 0 
 void imprimirPokemon(POKEMON *v){
 	printf("======================\n");
 	printf("Pokemon: \n");     
-	printf("Num: %d", v->num);  
+	printf("Num: %d \n", v->num);  
     printf("Nome: %s\n", v->nome);
     printf("Tipo: %s\n", v->tipo);
     printf("HP: %d\n", v->hp);

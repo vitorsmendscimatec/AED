@@ -1,5 +1,3 @@
-#define TAM 6
-
 typedef struct{ // struct do cemiterio e suas funcoes
 	int cont;
 	POKEMON *pokemon[TAM];
@@ -101,3 +99,4 @@ POKEMON* reviver_pokemon(CEMITERIO *l, char *nome){
 	}
     return p;
 }
+

@@ -1,43 +1,24 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include<time.h>//necessário p/ função time()
-#include <conio.h>
-
-#include "ataque_struct.h"
-#include "pokemon_struct.h"
-#include "lista_enc.h"
-#include "deck.h"
-#include "registro_arquivo.h"
-
+#include "includes.h"
 
 //Isso serve para ele parar de dar 'warning' por converter string constante para 'char*'
 #pragma GCC diagnostic ignored "-Wwrite-strings"
 
 int main(){
-	ataque TACKLE, BUBBLES, VINE;
-    POKEMON* squirtle, *bulbasaur, *SSsquirtleSS;
-    LISTAE* l = cria_lista();
-    
-	TACKLE = cria_ataque("Tackle", "Normal", 10);
-    BUBBLES = cria_ataque("Bubbles", "Water", 10);
-    VINE = cria_ataque("Vine Whip", "Grass", 10);
-    //Criar tantos ataques quanto se queira
-    
+    POKEMON* squirtle, *bulbasaur, *lapossauro;
     //Modelo sobre como criar um pokemon
-	squirtle = cria_pokemon("Squirtle", "Water", 35, TACKLE, BUBBLES);
-    bulbasaur = cria_pokemon("Bulbasaur", "Grass", 35, TACKLE, VINE);
-    SSsquirtleSS = cria_pokemon("SSSquirtleSS", "Water", 35, TACKLE, BUBBLES);
-    
-	l = enche_lista();
-	print_lista(l);
-	NOL* aux = *l;
-	printf("dano %d\n", aux->dados.atk[0].dano);
-    //del_all();
-    //sobrescreve(*SSsquirtleSS, 1);
-    //registra(SSsquirtleSS);
-    //registra(bulbasaur);
+	squirtle = cria_pokemon(1 ,"Squirtle", "Water", 35, 10);
+    bulbasaur = cria_pokemon(2 ,"Bulbasaur", "Grass", 35, 10);
+    lapossauro = cria_pokemon(3, "Lapossauro", "Fire", 35, 10);
+
+    del_all();
+
+    //sobrescreve(*lapossauro, 1);
+    registra(lapossauro);
+    registra(bulbasaur);
+    registra(squirtle);
     //lista_to_arq(l);
-    //print_arquivo();
+    
+    print_arquivo();
+
 	return 0;
 }

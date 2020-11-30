@@ -1,21 +1,13 @@
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>//necess?rio p/ fun??o time()
-#include <conio.h>
-
-
 void registra(POKEMON* p){
 	
-	FILE *pArq = fopen("pokedex.bin", "ab");;
+	FILE *pArq = fopen("pokedex.bin", "ab");
 	
 	if(pArq == NULL){
 		printf("Erro ao abrir arquivo\n");
 		exit(1);
 	}
 	fwrite(p, sizeof(POKEMON), 1, pArq);
-	fclose (pArq);
+	fclose(pArq);
 }
 
 void print_arquivo(){
@@ -62,24 +54,10 @@ POKEMON busca_pokemon_pos(int pos){
 	fclose (pArq);
 	return p;
 }
-/*
-//Apaga o arquivo antigo e cria um de mesmo nome com base nos dados da lista
-void lista_to_arq(LISTAE* l, int apaga_ant=0){
-	//apaga_ant = 0 => os dados ser?o acrescentados ao arquivo ja existente
-	//apaga_ant = 1 => apaga todos os dados anteriores
-	if(apaga_ant){
-		FILE *pArq;
-		pArq = fopen("pokedex.bin", "wb");
-	}
-	
-	NOL* aux = *l;
-	while(aux != NULL){
-		registra(&aux->dados);
-		aux = aux->prox;
-	}
-}*/
-void lista_to_arq(LISTAE* l, int apaga_ant=0){
-	//apaga_ant = 0 => os dados serão acrescentados ao arquivo ja existente
+
+
+void lista_to_arq(LISTAE* l, int (apaga_ant)=0){
+	//apaga_ant = 0 => os dados serï¿½o acrescentados ao arquivo ja existente
 	//apaga_ant = 1 => apaga todos os dados anteriores
 	if(apaga_ant){
 		FILE *pArq;

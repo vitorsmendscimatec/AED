@@ -1,12 +1,4 @@
-#include <stdio.h>
-#include <locale.h>
-#include <conio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
-#include <unistd.h>
-#include <windows.h>
-#include "interface.h"
+#include "includes.h"
 
 
 int main(){
@@ -28,7 +20,7 @@ case 1: {
 	m1 = digitenome1();
 	m2 = digitenome2();	
 	c = strcmp(m1->nome, m2->nome);
-	if(c==0) printf("Você digitou o mesmo nome para os dois players!\n"); //deletar dela e aparecer dps de 1seg
+	if(c==0) printf("Vocï¿½ digitou o mesmo nome para os dois players!\n"); //deletar dela e aparecer dps de 1seg
 	
 	}
 
