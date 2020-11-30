@@ -56,12 +56,9 @@ POKEMON busca_pokemon_pos(int pos){
 		printf("Erro ao abrir arquivo\n");
 		exit(1);
 	}
-	
 
 	fseek(pArq, pos*sizeof(POKEMON), SEEK_SET);
 	fread(&p, sizeof(POKEMON), 1, pArq);
-	
-	
 	fclose (pArq);
 	return p;
 }
@@ -81,6 +78,21 @@ void lista_to_arq(LISTAE* l, int apaga_ant=0){
 		aux = aux->prox;
 	}
 }*/
+void lista_to_arq(LISTAE* l, int apaga_ant=0){
+	//apaga_ant = 0 => os dados serão acrescentados ao arquivo ja existente
+	//apaga_ant = 1 => apaga todos os dados anteriores
+	if(apaga_ant){
+		FILE *pArq;
+		pArq = fopen("pokedex.bin", "wb");
+	}
+
+	NOL* aux = *l;
+	while(aux != NULL){
+		registra(&aux->dados);
+		aux = aux->prox;
+	}
+}
+
 //Apaga o antigo pokemon na posicao pos e substitui pelo novo pokemon informado
 void sobrescreve(POKEMON p, int pos){
 
@@ -115,11 +127,8 @@ void sobrescreve(POKEMON p, int pos){
 		exit(10);
 	}
 	
-	
-		
-		
+	printf("Lista Atualizada!\n");	
 	print_lista(l);
 	lista_to_arq(l, 1);
 	destroi_listase(l);
-	
 }

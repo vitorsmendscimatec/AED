@@ -1,12 +1,3 @@
-#include <stdio.h>
-#include <locale.h>
-#include <conio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
-#include <unistd.h>
-#include <windows.h>
-#include "estruturas.h"
 //adicionar na entrada do jogo duas variaveis para o nome dos jogadores.
 
 void pikachu(){
