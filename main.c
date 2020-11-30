@@ -1,14 +1,14 @@
+#include <stdio.h>
+#include <locale.h>
+#include <conio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <conio.h>
-#include <locale.h>
 #include <unistd.h>
 #include <windows.h>
-#include "struct_pokemon.h"
-//#include "arquivo.h"
-#include "struct_mao.h"
-#include "struct_cemiterio.h"
 #include "interface.h"
+
+
 int main(){
 int a, b;
 Mao *m1;
@@ -31,7 +31,10 @@ case 1: {
 	if(c==0) printf("Você digitou o mesmo nome para os dois players!\n"); //deletar dela e aparecer dps de 1seg
 	
 	}
-escolha(m1, m2);
+
+Mao *p;
+escolha(m1, m2, p);
+//rodada(m1, m2); //batalha pokemon
 endgame();
 }
 

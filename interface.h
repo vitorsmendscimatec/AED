@@ -1,4 +1,12 @@
-
+#include <stdio.h>
+#include <locale.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include <unistd.h>
+#include <windows.h>
+#include "estruturas.h"
 //adicionar na entrada do jogo duas variaveis para o nome dos jogadores.
 
 void pikachu(){
@@ -91,23 +99,39 @@ fflush(stdin);
 return m2;
 }
 
-void escolha(Mao* m1, Mao* m2){
-printf("Escolha 5 dentre os pokemons abaixo através de seus respectivos número.\n");
-POKEMON *bia;
-bia = cria_pokemon("biancossauro", "Fogo", 80, 35);
+Mao* iniciepokedex(void){
+Mao *m;
 
+m = criarMao();
+POKEMON *p1, *p2, *p3;
+p1 = cria_pokemon(1,"Biancossauro", "Fogo", 120, 30);
+inserirOrdenadoMao(m, p1);
+p2 = cria_pokemon(2,"Lapossauro", "Grama", 100, 50);
+inserirOrdenadoMao(m, p2);
+p3 = cria_pokemon(3,"Charmander", "Fogo", 80, 60);
+inserirOrdenadoMao(m, p3);
+return m;
+}
+
+void escolha(Mao* m1, Mao* m2, Mao* p){
+printf("Escolha 5 dentre os pokemons abaixo através de seus respectivos número.\n");
+p = iniciepokedex();
+imprimirMao(p);
+printf("\nDigite o número do pokemon e em seguida pressione a teclar enter");
 
 int i;
-/*
-for(i=0;i<6;i++){
 
-inserirOrdenadoMao(m1, bia)
+for(i=0;i<6;i++){
+int n;
+scanf("%d", &n);
+//buscaBinaria()//necessidade de alteracao, para buscar por numero.
+//inserirOrdenadoMao(m1, )
 
 
 
 if(i == 5) printf("\n\nsua mão está cheia!\n\n");
 
-				}*/
+				}
 }
 
 void iniciajogo(Mao m1, Mao m2){
