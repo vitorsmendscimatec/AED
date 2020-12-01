@@ -1,15 +1,13 @@
 typedef struct pokemon{ //Struct do pokemongo
-	int num;
 	char nome[30];
 	char tipo[20];
 	int hp;
 	int atk;
 } POKEMON;
 
-POKEMON* cria_pokemon(int num, char *nome, char *tipo, int hp, int atk){ 
+POKEMON* cria_pokemon(char *nome, char *tipo, int hp, int atk){ 
 	//cria o pokemongo, foi complicado por conta desse malloc ai, tinha esquecido dele. Retorna o ponteiro pokemongo para ser usado na pilha(deck).
     POKEMON *p = (POKEMON*) malloc(sizeof(POKEMON));
-    p->num = num;
     strcpy(p->nome, nome);
     strcpy(p->tipo, tipo);
     p->hp = hp;
@@ -40,7 +38,6 @@ int compara_vantagens(char *tipopk1, char *tipopk2){ // compara atks, retorna 0 
 void imprimirPokemon(POKEMON *v){
 	printf("======================\n");
 	printf("Pokemon: \n");     
-	printf("Num: %d \n", v->num);  
     printf("Nome: %s\n", v->nome);
     printf("Tipo: %s\n", v->tipo);
     printf("HP: %d\n", v->hp);

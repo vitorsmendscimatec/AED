@@ -95,11 +95,11 @@ Mao* iniciepokedex(void){
 	
 	m = criarMao();
 	POKEMON *p1, *p2, *p3;
-	p1 = cria_pokemon(1,(char*)"Biancossauro", (char*)"Fogo", 120, 30);
+	p1 = cria_pokemon((char*)"Biancossauro", (char*)"Fogo", 120, 30);
 	inserirOrdenadoMao(m, p1);
-	p2 = cria_pokemon(2,(char*)"Lapossauro", (char*)"Grama", 100, 50);
+	p2 = cria_pokemon((char*)"Lapossauro", (char*)"Grama", 100, 50);
 	inserirOrdenadoMao(m, p2);
-	p3 = cria_pokemon(3,(char*)"Charmander", (char*)"Fogo", 80, 60);
+	p3 = cria_pokemon((char*)"Charmander", (char*)"Fogo", 80, 60);
 	inserirOrdenadoMao(m, p3);
 	return m;
 }

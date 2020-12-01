@@ -40,9 +40,10 @@ void del_all(){
 }
 
 //busca um pokemon pela posicao informada, do 1? ao n?
-POKEMON busca_pokemon_pos(int pos){
+POKEMON* busca_pokemon_pos(int pos){
+	pos--;
 	FILE *pArq;
-	POKEMON p;
+	POKEMON* p;
 	pArq = fopen("pokedex.bin", "rb");
 	if(pArq == NULL){
 		printf("Erro ao abrir arquivo\n");
@@ -50,7 +51,7 @@ POKEMON busca_pokemon_pos(int pos){
 	}
 
 	fseek(pArq, pos*sizeof(POKEMON), SEEK_SET);
-	fread(&p, sizeof(POKEMON), 1, pArq);
+	fread(p, sizeof(POKEMON), 1, pArq);
 	fclose (pArq);
 	return p;
 }
