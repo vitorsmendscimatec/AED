@@ -56,7 +56,7 @@ POKEMON busca_pokemon_pos(int pos){
 }
 
 
-void lista_to_arq(LISTAE* l, int (apaga_ant)=0){
+void lista_to_arq(LISTAE* l, int apaga_ant=0){
 	//apaga_ant = 0 => os dados ser�o acrescentados ao arquivo ja existente
 	//apaga_ant = 1 => apaga todos os dados anteriores
 	if(apaga_ant){
