@@ -91,17 +91,17 @@ return m2;
 }
 
 Mao* iniciepokedex(void){
-Mao *m;
-
-m = criarMao();
-POKEMON *p1, *p2, *p3;
-p1 = cria_pokemon(1,"Biancossauro", "Fogo", 120, 30);
-inserirOrdenadoMao(m, p1);
-p2 = cria_pokemon(2,"Lapossauro", "Grama", 100, 50);
-inserirOrdenadoMao(m, p2);
-p3 = cria_pokemon(3,"Charmander", "Fogo", 80, 60);
-inserirOrdenadoMao(m, p3);
-return m;
+	Mao *m;
+	
+	m = criarMao();
+	POKEMON *p1, *p2, *p3;
+	p1 = cria_pokemon(1,(char*)"Biancossauro", (char*)"Fogo", 120, 30);
+	inserirOrdenadoMao(m, p1);
+	p2 = cria_pokemon(2,(char*)"Lapossauro", (char*)"Grama", 100, 50);
+	inserirOrdenadoMao(m, p2);
+	p3 = cria_pokemon(3,(char*)"Charmander", (char*)"Fogo", 80, 60);
+	inserirOrdenadoMao(m, p3);
+	return m;
 }
 
 void escolha(Mao* m1, Mao* m2, Mao* p){
