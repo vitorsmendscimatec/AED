@@ -4,10 +4,9 @@
 #pragma GCC diagnostic ignored "-Wwrite-strings"
 
 int main(){
-    POKEMON *lapossauro,* squirtle, *bulbasaur, *Charmander, *Pidgey, *Rattata, *Vulpix, *Poliwag, *Meganium;
-    POKEMON *p1, *p2, *p3;
-	p1 = cria_pokemon((char*)"Biancossauro", (char*)"Fogo", 40, 5);
-	p2 = cria_pokemon((char*)"Lapossauro", (char*)"Grama", 100, 50);
+    POKEMON *Biancossauro, *Meowth, *lapossauro,* squirtle, *bulbasaur, *Charmander, *Pidgey, *Rattata, *Vulpix, *Poliwag, *Pikachu;
+	Biancossauro = cria_pokemon((char*)"Biancossauro", (char*)"Fire", 40, 5);
+	Meowth = cria_pokemon((char*)"Meowth", (char*)"Grass", 100, 50);
 	
     //Modelo sobre como criar um pokemon
     lapossauro = cria_pokemon("Lapossauro", "Fire", 35, 10);
@@ -19,14 +18,14 @@ int main(){
     //Pikachu =  cria_pokemon("Pikachu", "Electric", 30, 7 );
     Vulpix = cria_pokemon("Vulpix", "Fire", 30, 7 );
     Poliwag = cria_pokemon("Poliwag", "Water", 35, 5 );
-	Meganium = cria_pokemon("Meganium", "Grass", 35, 5 );
+	Pikachu = cria_pokemon("Pikachu", "Normal", 35, 5);
 	//Abra = cria_pokemon("Abra", "Physhic", 30, 7);
 
     del_all();
 
     //sobrescreve(*lapossauro, 1);
-    registra(p1);
-    registra(p2);
+    registra(Biancossauro);
+    registra(Meowth);
 
     registra(lapossauro);
     registra(squirtle);
@@ -37,7 +36,7 @@ int main(){
     
     registra(Vulpix);
     registra(Poliwag);
-    registra(Meganium);
+    registra(Pikachu);
     print_arquivo();
     
 	return 0;

@@ -8,6 +8,7 @@
 #include <locale.h>
 #include <unistd.h>
 #include <windows.h>
+
 #include "prints.h"
 #include "struct_pokemon.h"
 #include "lista_enc.h"

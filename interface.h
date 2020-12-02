@@ -48,50 +48,49 @@ return m2;
 
 
 void escolha(Mao *m, int num, char *nome){
-int i;
-POKEMON *p[5];
-for(i=5; i>0; i--){
-system("cls");
-printf("\n%s escolha 5 dentre os pokemons abaixo atraves de seus respectivos numero.\n", nome);
-print_arquivo();
-printf("\nDigite o numero do pokemon e em seguida pressione a teclar enter, eh permitido apenas 5 pokemons.\n");	
-	
-
-int pos;
-scanf("%d", &pos);
-
-int vagas;
-	if(pos<16 && pos>0){
-  
-	vagas = i-1;
-	p[i] = busca_pokemon_pos(pos);
-	inserirOrdenadoMao(m, p[i]);
+	int i;
+	POKEMON* temp;
+	for(i=5; i>0; i--){
+		system("cls");
+		printf("\n%s escolha 5 dentre os pokemons abaixo atraves de seus respectivos numero.\n", nome);
+		print_arquivo();
+		printf("\nDigite o numero do pokemon e em seguida pressione a teclar enter, eh permitido apenas 5 pokemons.\n");	
+			
+		
+		int pos;
+		scanf("%d", &pos);
+		
+		int vagas;
+			if(pos > 0 && pos < 16){
+				vagas = i-1;
+				temp = busca_pokemon_pos(pos);
+				inserirOrdenadoMao(m, temp);
+				system("cls");
+				imprimirPokemon(temp); printf("\n");
+				printpokemon(pos); sleep(2);system("cls");
+				printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+				printf("RESGISTRANDO\n                                                                         %s entrou para o seu time!", temp->nome);  
+				printf("\n                                                                         ");
+				printf("Restam %d vagas em sua mao.", vagas);  sleep(2); system("cls");				
+			}
+		
+		
+			else{
+			vagas = i;
+			system("cls");
+			printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+			printf("COMANDO INVALIDO!"); 
+			i++;
+			sleep(2); system("cls");
+			printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+			printf("Restam %d vagas em sua mao.", vagas);  sleep(2); system("cls");
+				}
+		
+	}
+		printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+		printf("Sua mao esta completa!");  sleep(2); system("cls");
+		imprimirMaoHorizontal(m); sleep(5);
 	system("cls");
-	imprimirPokemon(p[i]); printf("\n");
-	printpokemon(pos); sleep(2);system("cls");
-	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
-	printf("RESGISTRANDO\n                                                                         %s entrou para o seu time!", p[i]->nome);  
-	printf("\n                                                                         ");
-	printf("Restam %d vagas em sua mao.", vagas);  sleep(2); system("cls");				
-						}
-
-
-	else{
-	vagas = i;
-	system("cls");
-	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
-	printf("COMANDO INVALIDO!"); 
-	i++;
-	sleep(2); system("cls");
-	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
-	printf("Restam %d vagas em sua mao.", vagas);  sleep(2); system("cls");
-		}
-	
-}
-	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
-	printf("Sua mao esta completa!");  sleep(2); system("cls");
-	imprimirMaoHorizontal(m); sleep(5);
-system("cls");
 }
 
 
