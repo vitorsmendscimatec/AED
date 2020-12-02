@@ -1,9 +1,9 @@
 #define TAM 6
 
-typedef struct{ //Mão, coloquei 5 pokemons mas foi só pra teste
+typedef struct{ //Mao, coloquei 5 pokemons mas foi so pra teste
 	int cont;
 	char nome[30];
-	POKEMON *pokemon[TAM];   
+	POKEMON pokemon[TAM];   
 } Mao;
 
 Mao* criarMao(){
@@ -31,7 +31,7 @@ int estahVaziaMao(Mao* l){
 
 int estaCheiaMao(Mao* l){
 	if(l == NULL) return -1;
-	else return l->cont == 5;
+	else return l->cont == TAM;
 }
 
 int inserirOrdenadoMao(Mao* l, POKEMON *v){
@@ -41,12 +41,14 @@ int inserirOrdenadoMao(Mao* l, POKEMON *v){
 	if(estahVaziaMao(l)) 
 		posicao = 0;
 	else{ // Acha a posicao para inserir
-		for(i=l->cont-1; i>=0 && (strcmp(l->pokemon[i]->nome, v->nome) > 0); i--){
+		for(i=l->cont-1; i>=0 && (strcmp(l->pokemon[i].nome, v->nome) > 0); i--){
+			//printf("l[i+1]: %s    l[i]: %s", l->pokemon[i+1]);
 			l->pokemon[i+1] = l->pokemon[i];
+			
 		}
 		posicao = i+1;
 	}
-	l->pokemon[posicao] = v;
+	l->pokemon[posicao] = *v;
 	l->cont++;
 	return 1;
 }
@@ -56,7 +58,7 @@ void imprimirMao(Mao* l){
 	if(l != NULL){
 		if(!estahVaziaMao(l)){
 			for(i=0; i<l->cont; i++){
-				imprimirPokemon(l->pokemon[i]);
+				imprimirPokemon(&l->pokemon[i]);
 			}
 		}else{
 			printf("Mao esta vazia!\n");
@@ -66,6 +68,24 @@ void imprimirMao(Mao* l){
 	}
 }
 
+void imprimerMaoLinhas(Mao* l){
+	int i;
+	if(l != NULL){
+		if(!estahVaziaMao(l)){
+			for(i=0; i<l->cont; i++){
+				imprimirPokemonResumo(&l->pokemon[i], i+1);
+			}
+		}else{
+			printf("Mao esta vazia!\n");
+		}
+	}else{
+		printf("Mao nao foi criada!\n");
+	}
+}
+
+
+
+
 int buscaBinaria(Mao *l, char *nome){ 
 	int inf, sup, meio;
 	inf=0;
@@ -73,9 +93,9 @@ int buscaBinaria(Mao *l, char *nome){
 	while (inf<=sup)
 	{
 		meio=(inf+sup)/2;
-		if (strcmp(l->pokemon[meio]->nome, nome) == 0)
+		if (strcmp(l->pokemon[meio].nome, nome) == 0)
 			return meio;
-		else if (strcmp(l->pokemon[meio]->nome, nome) > 0)
+		else if (strcmp(l->pokemon[meio].nome, nome) > 0)
 			sup = meio-1;
 		else
 			inf=meio+1;
@@ -92,7 +112,7 @@ POKEMON* remover_damao(Mao *l, char *nome){
 	if(estahVaziaMao(l)) return 0;
 	
 	posRem = buscaBinaria(l, nome);
-	p = l->pokemon[posRem];
+	p = &l->pokemon[posRem];
 
 	if(posRem >= 0){
 		for(i=posRem; i<l->cont; i++){

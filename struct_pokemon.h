@@ -45,6 +45,16 @@ void imprimirPokemon(POKEMON *v){
 	printf("======================\n");
 }
 
+//num representa o numero que sera exibido na frente do pokemon
+void imprimirPokemonResumo(POKEMON *v, int num){
+	printf("%d -> ", num);
+    printf("Nome: %s    ", v->nome);
+    printf("Tipo: %s    ", v->tipo);
+    printf("HP: %d    ", v->hp);
+    printf("Ataque: %d", v->atk);
+    printf("\n");
+}
+
 typedef struct no{ //Struct da pilha(deck)
     POKEMON *pokemon;    
 	struct no *prox;
