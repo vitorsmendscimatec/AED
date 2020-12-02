@@ -109,7 +109,7 @@ void imprimirMaoHorizontal(Mao* l){
 			for(i=0; i<l->cont; i++){
 				char pos_c[10], temp[10];
 				strcpy(pos_c, "Num: ");
-				itoa(i, temp, 10);
+				itoa(i+1, temp, 10);
 				strcat(pos_c, temp);
 				centerAlignText(campo, (sizeof campo)-1, pos_c);
     			printf("|%s|", campo);

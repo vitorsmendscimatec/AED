@@ -1,8 +1,6 @@
 #include "includes.h"
 
 int main(){
-	//printf("\a");
-	
 	int var;
     POKEMON* pko;
     Mao* m = criarMao();

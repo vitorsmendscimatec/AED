@@ -8,11 +8,11 @@
 #include <locale.h>
 #include <unistd.h>
 #include <windows.h>
-
+#include "prints.h"
 #include "struct_pokemon.h"
 #include "lista_enc.h"
 #include "arquivo.h"
 #include "struct_mao.h"
 #include "struct_cemiterio.h"
 #include "interface.h"
-#include "prints.h"	
+
