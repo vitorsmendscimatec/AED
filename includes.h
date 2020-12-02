@@ -14,4 +14,5 @@
 #include "arquivo.h"
 #include "struct_mao.h"
 #include "struct_cemiterio.h"
-#include "interface.h"	
+#include "interface.h"
+#include "prints.h"	

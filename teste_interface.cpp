@@ -24,11 +24,12 @@ int main(){
 		if(c==0) printf("Voc� digitou o mesmo nome para os dois players!\n"); //deletar dela e aparecer dps de 1seg
 		system("cls");
 		}
-	
+int v;
 	escolha(m1, 1, m1->nome);
 	escolha(m2, 2, m2->nome);
-	jogo(m1, m2);
-	endgame();
+	v = jogo(m1, m2);
+	if(v == 1) endgame(m1->nome);
+	else endgame(m2->nome);
 	}
 	
 	}

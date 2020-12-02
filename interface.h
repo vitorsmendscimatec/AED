@@ -1,77 +1,31 @@
 //adicionar na entrada do jogo duas variaveis para o nome dos jogadores.
 
-void pikachu(){
-printf("                                                                                                                      ,-.\n");
-    printf("                                                                                                                   _.|  '\n");
-    printf("                                                                                                                 .'  | /\n");
-    printf("                                                                                                               ,'    |'\n");
-    printf("                                                                                                              /      /\n");
-    printf("                                                                                                _..----\"\"---.'      /\n");
-    printf("                                                                          _.....---------...,-\"\"                  ,'\n");
-    printf("                                                                          `-._  \\                                /\n");
-    printf("                                                                              `-.+_            __           ,--. .\n");
-    printf("                                                                                   `-.._     .:  ).        (`--\"| \\\n");
-    printf("                                                                                        7    | `\" |         `...'  \\\n");
-    printf("                                                                                        |     `--'     '+\"        ,\". ,\"\"-\n");
-    printf("                                                                                        |   _...        .____     | |/    '\n");
-    printf("                                                                                   _.   |  .    `.  '--\"   /      `./     j\n");
-    printf("                                                                                  \\' `-.|  '     |   `.   /        /     /\n");
-    printf("                                                                                  '     `-. `---\"      `-\"        /     /\n");
-    printf("                                                                                   \\       `.                  _,'     /\n");
-    printf("                                                                                    \\        `                        .\n");
-    printf("                                                                                     \\                                j\n");
-    printf("                                                                                      \\                              /\n");
-    printf("                                                                                       `.                           .\n");
-    printf("                                                                                         +                          \\\n");
-    printf("                                                                                         |                           L\n");
-    printf("                                                                                         |                           |\n");
-    printf("                                                                                         |  _ /,                     |\n");
-    printf("                                                                                         | | L)'..                   |\n");
-    printf("                                                                                         | .    | `                  |\n");
-    printf("                                                                                         '  \\'   L                   '\n");
-    printf("                                                                                          \\  \\   |                  j\n");
-    printf("                                                                                           `. `__'                 /\n");
-    printf("                                                                                         _,.--.---........__      /\n");
-    printf("                                                                                        ---.,'---`         |   -j\"\n");
-    printf("                                                                                         .-'  '....__      L    |\n");
-    printf("                                                                                       \"\"--..    _,-'       \\ l||\n");
-    printf("                                                                                           ,-'  .....------. `||'\n");
-    printf("                                                                                        _,'                /\n");
-    printf("                                                                                      ,'                  /\n");
-    printf("                                                                                     '---------+-        /\n");
-    printf("                                                                                              /         /\n");
-    printf("                                                                                            .'         /\n");
-    printf("                                                                                          .'          /\n");
-    printf("                                                                                        ,'           /\n");
-    printf("                                                                                      _'....----\"\"\"\"\" mh\n");sleep(1);
-}
 
 int iniciar(){
-	int a;
-	//Se digitar uma letra aqui trava tudo
-	
-	char center[100];
-	system("cls");
-	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
-	printf("SEJA BEM VINDO AO POKEMON LAPA EDITION\n\n                                                                         DIGITE:\n                                                                         1- Iniciar jogo\n                                                                         2- Instru??es\n                                                                         3- Sair do jogo\n\n          ");
-	scanf("%d", &a);
-	system("cls");
-	if(a==1 || a==2 || a==3)return a;
-	else printf("%sComando inv?lido!", center); sleep(1); iniciar();
+int a;
+
+char center[100];
+system("cls");
+printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+printf("SEJA BEM VINDO AO POKEMON LAPA EDITION\n\n                                                                         DIGITE:\n                                                                         1- Iniciar jogo\n                                                                         2- Instru??es\n                                                                         3- Sair do jogo\n\n          ");
+scanf("%d", &a);
+system("cls");
+if(a==1 || a==2 || a==3)return a;
+else printf("%sComando inv?lido!", center); sleep(1); iniciar();
 }
 
-void endgame(){
-printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
-printf("\n                                88                                                       ");
-printf("\n                                88                                                       ");
-printf("\n                                88                                                       ");
-printf("\n ,adPPYba, 8b,dPPYba,   ,adPPYb,88  ,adPPYb,d8 ,adPPYYba, 88,dPYba,,adPYba,   ,adPPYba,  ");
-printf("\na8P_____88 88P'   ``8a a8ï¿½    `Y88 a8`    `Y88 ``     `Y8 88P'   '88`    `8a a8P_____88  ");
-printf("\n8PP`````` 88        88 8b       88 8b       88 ,adPPPPP88 88      88      88 8PP````````  ");
-printf("\n`8b,   ,aa 88      88 `8a,   ,d88` `8a,   ,d88 88,    ,88 88      88      88 `8b,   ,aa  ");
-printf("\n ``Ybbd8`' 88       88  ``8bbdP`Y8  ``YbbdP`Y8 ``8bbdP`Y8 88      88      88  ``Ybbd8`'   ");
-printf("\n                                    aa,    ,88                                          ");
-printf("\n                                     `Y8bbdP`");
+void endgame(char* nome){
+printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         VENCEDOR: ", nome);
+printf("\n                                                                                                         88                                                       ");
+printf("\n                                                                                                         88                                                       ");
+printf("\n                                                                                                         88                                                       ");
+printf("\n                                                                          ,adPPYba, 8b,dPPYba,   ,adPPYb,88  ,adPPYb,d8 ,adPPYYba, 88,dPYba,,adPYba,   ,adPPYba,  ");
+printf("\n                                                                         a8P_____88 88P'   ``8a a8ï¿½    `Y88 a8`    `Y88 ``     `Y8 88P'   '88`    `8a a8P_____88  ");
+printf("\n                                                                         8PP`````` 88        88 8b       88 8b       88 ,adPPPPP88 88      88      88 8PP````````  ");
+printf("\n                                                                         `8b,   ,aa 88      88 `8a,   ,d88` `8a,   ,d88 88,    ,88 88      88      88 `8b,   ,aa  ");
+printf("\n                                                                          ``Ybbd8`' 88       88  ``8bbdP`Y8  ``YbbdP`Y8 ``8bbdP`Y8 88      88      88  ``Ybbd8`'   ");
+printf("\n                                                                                                             aa,    ,88                                          ");
+printf("\n                                                                                                              `Y8bbdP`");
 }
 
 Mao* digitenome1(void){
@@ -92,46 +46,141 @@ fflush(stdin);
 return m2;
 }
 
-Mao* iniciepokedex(void){
-	Mao *m;
-	
-	m = criarMao();
-	POKEMON *p1, *p2, *p3;
-	p1 = cria_pokemon((char*)"Biancossauro", (char*)"Fogo", 120, 30);
-	inserirOrdenadoMao(m, p1);
-	p2 = cria_pokemon((char*)"Lapossauro", (char*)"Grama", 100, 50);
-	inserirOrdenadoMao(m, p2);
-	p3 = cria_pokemon((char*)"Charmander", (char*)"Fogo", 80, 60);
-	inserirOrdenadoMao(m, p3);
-	return m;
-}
 
-void escolha(Mao* m1, Mao* m2, Mao* p){
-printf("Escolha 5 dentre os pokemons abaixo atraves de seus respectivos numero.\n");
-p = iniciepokedex();
-imprimirMao(p);
-printf("\nDigite o numero do pokemon e em seguida pressione a teclar enter");
-
+void escolha(Mao *m, int num, char *nome){
 int i;
-
-for(i=0;i<6;i++){
-int n;
-scanf("%d", &n);
-//buscaBinaria()//necessidade de alteracao, para buscar por numero.
-//inserirOrdenadoMao(m1, )
-
-
-
-if(i == 5) printf("\n\nsua mao esta cheia!\n\n");
-
-				}
-}
-
-void iniciajogo(Mao m1, Mao m2){
-//recolhe do deck
-int i;
-for(i=1;i<6;i++){
-printf("Round %d", i);
-}
+POKEMON *p[5];
+for(i=5; i>0; i--){
+system("cls");
+printf("\n%s escolha 5 dentre os pokemons abaixo atraves de seus respectivos numero.\n", nome);
+print_arquivo();
+printf("\nDigite o numero do pokemon e em seguida pressione a teclar enter, eh permitido apenas 5 pokemons.\n");	
 	
+
+int pos;
+scanf("%d", &pos);
+
+int vagas;
+	if(pos<16 && pos>0){
+  
+	vagas = i-1;
+	p[i] = busca_pokemon_pos(pos);
+	inserirOrdenadoMao(m, p[i]);
+	system("cls");
+	imprimirPokemon(p[i]); printf("\n");
+	printpokemon(pos); sleep(2);system("cls");
+	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+	printf("RESGISTRANDO\n                                                                         %s entrou para o seu time!", p[i]->nome);  
+	printf("\n                                                                         ");
+	printf("Restam %d vagas em sua mao.", vagas);  sleep(2); system("cls");				
+						}
+
+
+	else{
+	vagas = i;
+	system("cls");
+	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+	printf("COMANDO INVALIDO!"); 
+	i++;
+	sleep(2); system("cls");
+	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+	printf("Restam %d vagas em sua mao.", vagas);  sleep(2); system("cls");
+		}
+	
+}
+	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+	printf("Sua mao esta completa!");  sleep(2); system("cls");
+	imprimirMaoHorizontal(m); sleep(5);
+system("cls");
+}
+
+
+
+int jogo(Mao* m1, Mao* m2){
+int cont=1, v=0;
+int esc;
+system("cls");
+printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+printf("O jogo inicie em: 3"); sleep(1);
+system("cls");
+printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+printf("O jogo inicie em: 2"); sleep(1);
+system("cls");
+printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+printf("O jogo inicie em: 1"); sleep(1);
+while(cont != 0){
+system("cls");
+printf("                                                                         Rodada %d\n", cont);
+printf("\nPlayer: %s\n", m1->nome);
+imprimirMaoHorizontal(m1);
+printf("\nPlayer: %s\n", m2->nome);
+imprimirMaoHorizontal(m2);
+printf("\n%s escolha:\n1) Atacar um pokemon adversario\n2) Passar a vez  ", m1->nome);
+scanf("%d", &esc);
+switch(esc){
+
+case 1: {
+system("cls");
+imprimirMaoHorizontal(m1);
+imprimirMaoHorizontal(m2);
+int pk1, pk2;
+POKEMON *patk1, *patk2;
+printf("\n%s Digite com qual pokemon você deseja atacar e aperte ENTER.\nDepois, digite o pokemon que você deseja atacar e aparte enter. ", m1->nome);
+scanf("%d", &pk1);
+patk1 = busca_pokemon_pos(pk1);
+scanf("%d", &pk2);
+patk2 = busca_pokemon_pos(pk2);
+atacar(patk1,patk2);
+	break;
+}
+case 2: {
+system("cls");
+printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+printf("O jogador passou a vez."); sleep(1); system("cls");
+	break;
+}
+}
+int cont2;
+cont2 = tamanhoMao(m2);
+if(cont2 == -1) v=1; cont=0;
+system("cls");
+
+printf("                                                                         Rodada %d", cont);
+imprimirMaoHorizontal(m1);
+imprimirMaoHorizontal(m2);
+printf("\n%s escolha:\n1) Atacar um pokemon adversario\n2) Passar a vez", m2->nome);
+scanf("%d", &esc);
+switch(esc){
+
+case 1: {
+system("cls");
+imprimirMaoHorizontal(m1);
+imprimirMaoHorizontal(m2);
+int pk1, pk2;
+POKEMON *patk1, *patk2;
+printf("\n%s Digite com qual pokemon você deseja atacar e aperte ENTER.\nDepois, digite o pokemon que você deseja atacar e aparte enter. ", m2->nome);
+scanf("%d", &pk1);
+patk1 = busca_pokemon_pos(pk1);
+scanf("%d", &pk2);
+patk2 = busca_pokemon_pos(pk2);
+atacar(patk1,patk2);
+	break;
+}
+case 2: {
+system("cls");
+printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+printf("O jogador passou a vez.");
+	break;
+}
+}
+
+int cont1;
+cont1 = tamanhoMao(m1);
+if(cont1 == -1) v=2; cont=0;
+
+
+cont++;	
+}	
+
+return v;
 }
