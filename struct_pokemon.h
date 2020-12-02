@@ -138,6 +138,8 @@ void atacar(POKEMON *atacante, POKEMON *atacado){
     else if(multiplicador == 2) efeito = 2.0;
 
     atacado->hp = atacado->hp - (atacante->atk)*efeito;
+    
+    // IDEIA printar mensagem: fulano atacou beutrano e foi (super, ine)efetivo!!
 
     imprimirPokemon(atacado);
 }

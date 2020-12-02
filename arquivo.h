@@ -39,8 +39,30 @@ void del_all(){
 	fclose(pArq);
 }
 
+int tam_arquivo(){
+	FILE *pArq;
+	pArq = fopen("pokedex.bin", "rb");
+	if(pArq == NULL){
+		printf("Erro ao abrir arquivo\n");
+		exit(1);
+	}
+	
+	int cont = 0;
+	while(getc(pArq) != EOF){				//Loop enquanto n?o chegar ao fim do arquivo
+		POKEMON temp;
+		fseek(pArq, cont*sizeof(POKEMON), SEEK_SET);
+		fread(&temp, sizeof(POKEMON), 1, pArq);
+		cont++;
+	}
+	fclose(pArq);
+	return cont;
+}
 //busca um pokemon pela posicao informada, do 1? ao n?
 POKEMON* busca_pokemon_pos(int pos){
+	if(pos <= 0 || pos > tam_arquivo()){
+		printf("Essa posicao posicao nao existe no arquivo\n\nERRO!");
+		exit(10);
+	}
 	pos--;
 	FILE *pArq;
 	POKEMON* p;

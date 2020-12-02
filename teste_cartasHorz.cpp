@@ -6,6 +6,7 @@ int main(){
     Mao* m = criarMao();
     print_arquivo();
     
+    printf("tamanho: %d\n", tam_arquivo());
     
     for (int i = 0; i<6; i++){
     	scanf(" %d", &var);

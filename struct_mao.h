@@ -83,7 +83,87 @@ void imprimerMaoLinhas(Mao* l){
 	}
 }
 
+const char *centerAlignText(char *field, unsigned int fieldWidth, const char *text){
+    if (fieldWidth == 0 || field == NULL) return "";
 
+    fieldWidth--;
+    unsigned int len = strlen(text);
+    unsigned int padding = fieldWidth > len ? (fieldWidth+1 - len)/2 : 0;
+    sprintf(field, "%*s%.*s%*s", padding, "", fieldWidth-1, text, padding>0 && len%2!=fieldWidth%2 ? padding-1 : padding, "");
+
+    return (const char *)field;
+}
+
+void imprimirMaoHorizontal(Mao* l){
+	int i;
+	int numChars = 140;		//numero de caracteres por linha do terminal
+	char campo[numChars/6];		//Divide por 6 já que esse é o tamanho maximo da mao
+	
+	if(l != NULL){
+		if(!estahVaziaMao(l)){
+			for(i=0; i<l->cont; i++){
+				printf("|%s|", centerAlignText(campo, sizeof campo, "======================"));
+			}
+			printf("\n");
+			
+			for(i=0; i<l->cont; i++){
+				char pos_c[10], temp[10];
+				strcpy(pos_c, "Num: ");
+				itoa(i, temp, 10);
+				strcat(pos_c, temp);
+				centerAlignText(campo, (sizeof campo)-1, pos_c);
+    			printf("|%s|", campo);
+			}
+			printf("\n");
+			
+			memset(campo, 0, numChars/6);
+			for(i=0; i<l->cont; i++){
+				centerAlignText(campo, (sizeof campo)-1, l->pokemon[i].nome);
+    			printf("|%s|", campo);
+			}
+			printf("\n");
+			
+			memset(campo, 0, numChars/6);
+			for(i=0; i<l->cont; i++){
+				centerAlignText(campo, (sizeof campo)-1, l->pokemon[i].tipo);
+    			printf("|%s|", campo);
+			}
+			printf("\n");
+			
+			memset(campo, 0, numChars/6);
+			for(i=0; i<l->cont; i++){
+				char hp[10], temp_hp[5];
+				strcpy(hp, "HP: ");
+				itoa(l->pokemon[i].hp, temp_hp, 10);
+				strcat(hp, temp_hp);
+				centerAlignText(campo, (sizeof campo)-1, hp);
+    			printf("|%s|", campo);
+			}
+			printf("\n");
+			
+			memset(campo, 0, numChars/6);
+			for(i=0; i<l->cont; i++){
+				char atk[10], temp_atk[5];
+				strcpy(atk, "DANO: ");
+				itoa(l->pokemon[i].atk, temp_atk, 10);
+				strcat(atk, temp_atk);
+				centerAlignText(campo, (sizeof campo)-1, atk);
+    			printf("|%s|", campo);
+			}
+			printf("\n");
+			
+			for(i=0; i<l->cont; i++){
+				printf("|%s|", centerAlignText(campo, sizeof campo, "======================"));
+			}
+			printf("\n");
+			
+		}else{
+			printf("Mao esta vazia!\n");
+		}
+	}else{
+		printf("Mao nao foi criada!\n");
+	}
+}
 
 
 int buscaBinaria(Mao *l, char *nome){ 
