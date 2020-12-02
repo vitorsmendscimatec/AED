@@ -127,3 +127,17 @@ POKEMON *desempilha(PILHA *p){// cava o deck
         return 0;
     }
 }
+
+void atacar(POKEMON *atacante, POKEMON *atacado){
+    int multiplicador;
+    float efeito;
+
+    multiplicador = compara_vantagens(atacante->tipo, atacado->tipo);
+    if(multiplicador == 0) efeito = 1.0;
+    else if(multiplicador == 1) efeito = 0.5;
+    else if(multiplicador == 2) efeito = 2.0;
+
+    atacado->hp = atacado->hp - (atacante->atk)*efeito;
+
+    imprimirPokemon(atacado);
+}
