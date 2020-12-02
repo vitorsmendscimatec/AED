@@ -45,17 +45,19 @@ printf("                                                                        
     printf("                                                                                        ,'           /\n");
     printf("                                                                                      _'....----\"\"\"\"\" mh\n");sleep(1);
 }
-int iniciar(){
-int a;
 
-char center[100];
-system("cls");
-printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
-printf("SEJA BEM VINDO AO POKEMON LAPA EDITION\n\n                                                                         DIGITE:\n                                                                         1- Iniciar jogo\n                                                                         2- Instru??es\n                                                                         3- Sair do jogo\n\n          ");
-scanf("%d", &a);
-system("cls");
-if(a==1 || a==2 || a==3)return a;
-else printf("%sComando inv?lido!", center); sleep(1); iniciar();
+int iniciar(){
+	int a;
+	//Se digitar uma letra aqui trava tudo
+	
+	char center[100];
+	system("cls");
+	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+	printf("SEJA BEM VINDO AO POKEMON LAPA EDITION\n\n                                                                         DIGITE:\n                                                                         1- Iniciar jogo\n                                                                         2- Instru??es\n                                                                         3- Sair do jogo\n\n          ");
+	scanf("%d", &a);
+	system("cls");
+	if(a==1 || a==2 || a==3)return a;
+	else printf("%sComando inv?lido!", center); sleep(1); iniciar();
 }
 
 void endgame(){

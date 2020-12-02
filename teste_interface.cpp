@@ -11,7 +11,8 @@ int main(){
 	
 	
 		a = iniciar();
-		pikachu();
+		printpokemon(11); sleep(2);
+		printf("                                                       POKEMON LAPA EDITION");
 		system("cls");
 	switch(a){
 	case 1: {
@@ -21,12 +22,12 @@ int main(){
 		m2 = digitenome2();	
 		c = strcmp(m1->nome, m2->nome);
 		if(c==0) printf("Voc� digitou o mesmo nome para os dois players!\n"); //deletar dela e aparecer dps de 1seg
-		
+		system("cls");
 		}
 	
-	Mao *p;
-	escolha(m1, m2, p);
-	//rodada(m1, m2); //batalha pokemon
+	escolha(m1, 1, m1->nome);
+	escolha(m2, 2, m2->nome);
+	jogo(m1, m2);
 	endgame();
 	}
 	
