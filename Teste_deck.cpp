@@ -15,8 +15,11 @@ int main(){
 
     inserirOrdenadoMao(mA, squirtle);
     inserirOrdenadoMao(mB, bulbasaur);
-    imprimirMao(mA);
-	imprimirMao(mB);
+
+    printf("Mao A\n");
+    imprimirMaoHorizontal(mA);
+    printf("Mao B\n");
+    imprimirMaoHorizontal(mB);
 	
     printf("========================\n");
     atacar(&mA->pokemon[0], &mB->pokemon[0]);

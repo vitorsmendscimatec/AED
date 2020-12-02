@@ -133,13 +133,17 @@ void atacar(POKEMON *atacante, POKEMON *atacado){
     float efeito;
 
     multiplicador = compara_vantagens(atacante->tipo, atacado->tipo);
-    if(multiplicador == 0) efeito = 1.0;
-    else if(multiplicador == 1) efeito = 0.5;
-    else if(multiplicador == 2) efeito = 2.0;
+    if(multiplicador == 0){
+        efeito = 1.0;
+        printf("%s atacou %s!\n", atacante->nome, atacado->nome);
+    }else if(multiplicador == 1){
+        efeito = 0.5;
+        printf("%s atacou %s!\n Nao parece ter sido efetivo...\n", atacante->nome, atacado->nome);
+    }else if(multiplicador == 2){
+         efeito = 2.0;
+         printf("%s atacou %s!\n O ataque foi efetivo!!!\n", atacante->nome, atacado->nome);
+    }
 
     atacado->hp = atacado->hp - (atacante->atk)*efeito;
     
-    // IDEIA printar mensagem: fulano atacou beutrano e foi (super, ine)efetivo!!
-
-    imprimirPokemon(atacado);
 }
