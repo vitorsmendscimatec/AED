@@ -41,7 +41,7 @@ case 1:
 
     break;
     
-           case 4:
+    case 2:
     printf("                                        .\n");
     printf("                         |              |\n");
     printf("                         |             ,|\n");

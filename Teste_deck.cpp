@@ -25,7 +25,7 @@ int main(){
     imprimirMaoHorizontal(mA);
     printf("Mao B\n");
     imprimirMaoHorizontal(mB);
-
-    
+	
+    //atacar(mA->pokemon,)
     return 0;
 }

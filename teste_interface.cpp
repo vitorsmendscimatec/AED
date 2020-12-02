@@ -1,6 +1,7 @@
 #include "includes.h"
 #pragma GCC diagnostic ignored "-Wwrite-strings"
 // função ataque nao funciona!
+// o 3 ta errado
 int main(){
 	int a, b;
 	Mao *m1;

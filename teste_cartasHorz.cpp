@@ -14,7 +14,7 @@ int main(){
 		inserirOrdenadoMao(m, pko);
 		//imprimirMao(m);
 	}
-    
+    printf("tam da mao : %d\n", tamanhoMao(m));
 	
 	imprimirMaoHorizontal(m);
 	return 0;

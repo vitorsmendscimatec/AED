@@ -89,6 +89,7 @@ void escolha(Mao *m, int num, char *nome){
 	}
 		printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
 		printf("Sua mao esta completa!");  sleep(2); system("cls");
+		printf("%s:\n", m->nome);
 		imprimirMaoHorizontal(m); sleep(5);
 	system("cls");
 }
@@ -96,90 +97,108 @@ void escolha(Mao *m, int num, char *nome){
 
 
 int jogo(Mao* m1, Mao* m2){
-int cont=1, v=0;
-int esc;
-system("cls");
-printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
-printf("O jogo inicie em: 3"); sleep(1);
-system("cls");
-printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
-printf("O jogo inicie em: 2"); sleep(1);
-system("cls");
-printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
-printf("O jogo inicie em: 1"); sleep(1);
-while(cont != 0){
-system("cls");
-printf("                                                                         Rodada %d\n", cont);
-printf("\nPlayer: %s\n", m1->nome);
-imprimirMaoHorizontal(m1);
-printf("\nPlayer: %s\n", m2->nome);
-imprimirMaoHorizontal(m2);
-printf("\n%s escolha:\n1) Atacar um pokemon adversario\n2) Passar a vez  ", m1->nome);
-scanf("%d", &esc);
-switch(esc){
+	int cont=1, v=0;
+	int esc;
+	system("cls");
+	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+	printf("O jogo inicie em: 3"); sleep(1);
+	system("cls");
+	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+	printf("O jogo inicie em: 2"); sleep(1);
+	system("cls");
+	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+	printf("O jogo inicie em: 1"); sleep(1);
+	while(cont != 0){
+	system("cls");
+	printf("                                                                         Rodada %d\n", cont);
+	printf("\nPlayer: %s\n", m1->nome);
+	imprimirMaoHorizontal(m1);
+	printf("\nPlayer: %s\n", m2->nome);
+	imprimirMaoHorizontal(m2);
+	printf("\n%s escolha:\n1) Atacar um pokemon adversario\n2) Passar a vez  \n", m1->nome);
+	scanf("%d", &esc);
+	// vez da mao 1
+	switch(esc){
+	
+		case 1: {
+			system("cls");
+			imprimirMaoHorizontal(m1);
+			imprimirMaoHorizontal(m2);
+			int pk1, pk2;
+			printf("\n%s Digite com qual pokemon você deseja atacar e aperte ENTER.\nDepois, digite o pokemon que você deseja atacar e aparte enter.\n", m1->nome);
+			//VERIFICAR VALIDADE
+			do {
+				scanf(" %d", &pk1);	
+			} while (pk1 <=0 || pk1 > tamanhoMao(m1));
+			
+			
+			do {
+				scanf(" %d", &pk2);
+			} while (pk2 <=0 || pk2 > tamanhoMao(m2));
 
-case 1: {
-system("cls");
-imprimirMaoHorizontal(m1);
-imprimirMaoHorizontal(m2);
-int pk1, pk2;
-POKEMON *patk1, *patk2;
-printf("\n%s Digite com qual pokemon você deseja atacar e aperte ENTER.\nDepois, digite o pokemon que você deseja atacar e aparte enter. ", m1->nome);
-scanf("%d", &pk1);
-patk1 = busca_pokemon_pos(pk1);
-scanf("%d", &pk2);
-patk2 = busca_pokemon_pos(pk2);
-atacar(patk1,patk2);
-	break;
-}
-case 2: {
-system("cls");
-printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
-printf("O jogador passou a vez."); sleep(1); system("cls");
-	break;
-}
-}
-int cont2;
-cont2 = tamanhoMao(m2);
-if(cont2 == -1) v=1; cont=0;
-system("cls");
+			atacar(&m1->pokemon[pk1-1],&m2->pokemon[pk2-1]);
+			break;
+		}
+		case 2: {
+			system("cls");
+			printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+			printf("O jogador passou a vez."); sleep(1); system("cls");
+			break;
+		}
+	}
+	int cont2;
+	cont2 = tamanhoMao(m2);
+	if(cont2 == -1){
+		v=1;
+		cont=0;	
+	} 
+	system("cls");
+	
+	printf("                                                                         Rodada %d\n", cont);
+	imprimirMaoHorizontal(m1);
+	imprimirMaoHorizontal(m2);
+	printf("\n%s escolha:\n1) Atacar um pokemon adversario\n2) Passar a vez\n", m2->nome);
+	int esc2;
+	scanf(" %d", &esc2);
+	// VEZ do jogador 2
+	switch(esc2){
+	
+		case 1: {
+			system("cls");
+			imprimirMaoHorizontal(m1);
+			imprimirMaoHorizontal(m2);
+			int pk1, pk2;
+			printf("\n%s Digite com qual pokemon você deseja atacar e aperte ENTER.\nDepois, digite o pokemon que você deseja atacar e aparte enter.\n", m2->nome);
+			
+			do {
+				scanf(" %d", &pk2);
+			} while (pk2 <=0 || pk2 > tamanhoMao(m2));
+			
+			do {
+				scanf(" %d", &pk1);	
+			} while (pk1 <=0 || pk1 > tamanhoMao(m1));
 
-printf("                                                                         Rodada %d", cont);
-imprimirMaoHorizontal(m1);
-imprimirMaoHorizontal(m2);
-printf("\n%s escolha:\n1) Atacar um pokemon adversario\n2) Passar a vez", m2->nome);
-scanf("%d", &esc);
-switch(esc){
-
-case 1: {
-system("cls");
-imprimirMaoHorizontal(m1);
-imprimirMaoHorizontal(m2);
-int pk1, pk2;
-POKEMON *patk1, *patk2;
-printf("\n%s Digite com qual pokemon você deseja atacar e aperte ENTER.\nDepois, digite o pokemon que você deseja atacar e aparte enter. ", m2->nome);
-scanf("%d", &pk1);
-patk1 = busca_pokemon_pos(pk1);
-scanf("%d", &pk2);
-patk2 = busca_pokemon_pos(pk2);
-atacar(patk1,patk2);
-	break;
-}
-case 2: {
-system("cls");
-printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
-printf("O jogador passou a vez.");
-	break;
-}
-}
-
-int cont1;
-cont1 = tamanhoMao(m1);
-if(cont1 == -1) v=2; cont=0;
-
-
-cont++;	
-}	
-
-return v;
+			atacar(&m2->pokemon[pk2-1], &m1->pokemon[pk1-1]);
+			break;
+		}
+		case 2: {
+			system("cls");
+			printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+			printf("O jogador passou a vez.");
+				break;
+		}
+	}
+	
+	int cont1;
+	cont1 = tamanhoMao(m1);
+	if(cont1 == -1){
+		v=2; 
+		cont=0;	
+	} 
+	
+	
+	cont++;	
+	}	
+	
+	return v;
 }
