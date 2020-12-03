@@ -143,7 +143,15 @@ void atacar(POKEMON *atacante, POKEMON *atacado){
 		efeito = 2.0;
 		printf("%s atacou %s!\n O ataque foi superefetivo!!!\n", atacante->nome, atacado->nome);
     }
-   
+    sleep(2);
     atacado->hp = int(atacado->hp - (atacante->atk)*efeito);
     
+}
+
+int sem_vida(POKEMON* p){
+	if(p->hp <= 0){
+		return 1;
+	} else {
+		return 0;
+	}
 }

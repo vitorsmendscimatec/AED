@@ -1,6 +1,8 @@
 #include "includes.h"
 
 int main(){
+	setlocale(LC_ALL, "Portuguese");
+	
     Mao *mA, *mB;
    
     POKEMON *squirtle, *bulbasaur;
@@ -8,18 +10,20 @@ int main(){
 
 	mA = criarMao();
 	mB = criarMao();
+	strcpy(mA->nome, "Fulano");
+	strcpy(mB->nome, "Beltrano");
 	
-    squirtle = cria_pokemon("Squirtle", "Water", 30, 8 );
-    bulbasaur = cria_pokemon("Bulbasaur", "Grass", 30, 8 );
+    squirtle = cria_pokemon("Squirtle", "Water", 30, 60 );
+    bulbasaur = cria_pokemon("Bulbasaur", "Grass", 30, 30 );
 
     inserirOrdenadoMao(mA, squirtle);
     inserirOrdenadoMao(mB, bulbasaur);
     
-	printf("========================\n");
+	/*printf("========================\n");
     printf("Mao A\n");
     imprimirMaoHorizontal(mA);
     printf("Mao B\n");
-    imprimirMaoHorizontal(mB);
+    imprimirMaoHorizontal(mB);*/
     
 	/*int pk1, pk2;
 	do {

@@ -7,11 +7,11 @@ int a;
 char center[100];
 system("cls");
 printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
-printf("SEJA BEM VINDO AO POKEMON LAPA EDITION\n\n                                                                         DIGITE:\n                                                                         1- Iniciar jogo\n                                                                         2- Instru??es\n                                                                         3- Sair do jogo\n\n          ");
+printf("SEJA BEM VINDO AO POKEMON LAPA EDITION\n\n                                                                         DIGITE:\n                                                                         1- Iniciar jogo\n                                                                         2- Instrucoes\n                                                                         3- Sair do jogo\n\n          ");
 scanf("%d", &a);
 system("cls");
 if(a==1 || a==2 || a==3)return a;
-else printf("%sComando inv?lido!", center); sleep(1); iniciar();
+else printf("%sComando invalido!", center); sleep(1); iniciar();
 }
 
 void endgame(char* nome){
@@ -100,20 +100,17 @@ int jogo(Mao* m1, Mao* m2){
 	int cont=1, v=0;
 	int esc;
 	system("cls");
-	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
-	printf("O jogo inicie em: 3"); sleep(1);
-	system("cls");
-	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
-	printf("O jogo inicie em: 2"); sleep(1);
-	system("cls");
-	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
-	printf("O jogo inicie em: 1"); sleep(1);
+	for(int i = 3; i > 0; i--){
+		printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+		printf("O jogo inicia em: %d", i);
+		sleep(1);
+		system("cls");	
+	}
+
 	while(cont != 0){
 	system("cls");
 	printf("                                                                         Rodada %d\n", cont);
-	printf("\nPlayer: %s\n", m1->nome);
 	imprimirMaoHorizontal(m1);
-	printf("\nPlayer: %s\n", m2->nome);
 	imprimirMaoHorizontal(m2);
 	printf("\n%s escolha:\n1) Atacar um pokemon adversario\n2) Passar a vez  \n", m1->nome);
 	scanf("%d", &esc);
@@ -122,6 +119,7 @@ int jogo(Mao* m1, Mao* m2){
 	
 		case 1: {
 			system("cls");
+			printf("                                                                         Rodada %d\n", cont);
 			imprimirMaoHorizontal(m1);
 			imprimirMaoHorizontal(m2);
 			int pk1, pk2;
@@ -137,6 +135,9 @@ int jogo(Mao* m1, Mao* m2){
 			} while (pk2 <=0 || pk2 > tamanhoMao(m2));
 
 			atacar(&m1->pokemon[pk1-1],&m2->pokemon[pk2-1]);
+			if(sem_vida(&m2->pokemon[pk2-1])){		//Se o atacado estiver sem vida
+				remover_pokemon(m2, pk2-1);
+			}
 			break;
 		}
 		case 2: {
@@ -165,6 +166,7 @@ int jogo(Mao* m1, Mao* m2){
 	
 		case 1: {
 			system("cls");
+			printf("                                                                         Rodada %d\n", cont);
 			imprimirMaoHorizontal(m1);
 			imprimirMaoHorizontal(m2);
 			int pk1, pk2;
@@ -179,6 +181,10 @@ int jogo(Mao* m1, Mao* m2){
 			} while (pk1 <=0 || pk1 > tamanhoMao(m1));
 
 			atacar(&m2->pokemon[pk2-1], &m1->pokemon[pk1-1]);
+			if(sem_vida(&m1->pokemon[pk1-1])){		//Se o atacado estiver sem vida
+				remover_pokemon(m1, pk1-1);
+			}
+
 			break;
 		}
 		case 2: {

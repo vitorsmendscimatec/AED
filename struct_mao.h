@@ -98,14 +98,20 @@ void imprimirMaoHorizontal(Mao* l){
 	int i;
 	int numChars = 140;		//numero de caracteres por linha do terminal
 	char campo[numChars/6];		//Divide por 6 já que esse é o tamanho maximo da mao
+	char total[numChars];
 	
 	if(l != NULL){
 		if(!estahVaziaMao(l)){
+			centerAlignText(campo, (sizeof campo)-1, l->nome);
+    		printf("%s\n", campo);
+    		
+    		memset(campo, 0, numChars/6);
 			for(i=0; i<l->cont; i++){
 				printf("|%s|", centerAlignText(campo, sizeof campo, "======================"));
 			}
 			printf("\n");
 			
+			memset(campo, 0, numChars/6);
 			for(i=0; i<l->cont; i++){
 				char pos_c[10], temp[10];
 				strcpy(pos_c, "Num: ");
@@ -200,5 +206,28 @@ POKEMON* remover_damao(Mao *l, char *nome){
 		}
 		l->cont--;	
 	}
+    return p;
+}
+
+//Versao que remove pela posicao
+// pode haver 2 pokemons com o msm nome
+POKEMON remover_pokemon(Mao *l, int posRem){
+	int i;
+	POKEMON p;
+	strcpy(p.nome, "Mao nula ou inexistente!");
+	
+	if(l == NULL) return p;
+	if(estahVaziaMao(l)) return p;
+	
+	p = l->pokemon[posRem];
+
+	if(posRem >= 0){
+		for(i=posRem; i<l->cont; i++){
+			l->pokemon[i] = l->pokemon[i+1];
+		}
+		l->cont--;	
+	}
+	printf("%s, seu %s esta fora de combate!\n", l->nome, p.nome);
+	sleep(2);
     return p;
 }

@@ -17,3 +17,5 @@
 #include "struct_cemiterio.h"
 #include "interface.h"
 
+//Isso serve para ele parar de dar 'warning' por converter string constante para 'char*'
+#pragma GCC diagnostic ignored "-Wwrite-strings"
