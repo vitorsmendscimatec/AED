@@ -1,6 +1,6 @@
 typedef struct{ // struct do cemiterio e suas funcoes
 	int cont;
-	POKEMON *pokemon[TAM];
+	POKEMON pokemon[TAM];
 } CEMITERIO;
 
 CEMITERIO* criarCemiterio(){
@@ -36,7 +36,7 @@ void imprime_cemiterio(CEMITERIO* l){
 	if(l != NULL){
 		if(!estahVaziaCemiterio(l)){
 			for(i=0; i<l->cont; i++){
-				imprimirPokemon(l->pokemon[i]);
+				imprimirPokemon(&l->pokemon[i]);
 			}
 		}else{
 			printf("Lista esta vazia!\n");
@@ -46,14 +46,14 @@ void imprime_cemiterio(CEMITERIO* l){
 	}
 }
 
-int insere_cemiterio(CEMITERIO* l, POKEMON *v){
+int insere_cemiterio(CEMITERIO* l, POKEMON v){
 	int i, posicao;
 	if(l==NULL) return 0;
 	if(estaCheiaCemiterio(l)) return 0;
 	if(estahVaziaCemiterio(l)) 
 		posicao = 0;
 	else{
-		for(i=l->cont-1; i>=0 && (strcmp(l->pokemon[i]->nome, v->nome) > 0); i--){
+		for(i=l->cont-1; i>=0 && (strcmp(l->pokemon[i].nome, v.nome) > 0); i--){
 			l->pokemon[i+1] = l->pokemon[i];
 		}
 		posicao = i+1;
@@ -70,9 +70,9 @@ int buscaBinariaC(CEMITERIO *l, char *nome){
 	while (inf<=sup)
 	{
 		meio=(inf+sup)/2;
-		if (strcmp(l->pokemon[meio]->nome, nome) == 0)
+		if (strcmp(l->pokemon[meio].nome, nome) == 0)
 			return meio;
-		else if (strcmp(l->pokemon[meio]->nome, nome) > 0)
+		else if (strcmp(l->pokemon[meio].nome, nome) > 0)
 			sup = meio-1;
 		else
 			inf=meio+1;
@@ -89,7 +89,7 @@ POKEMON* reviver_pokemon(CEMITERIO *l, char *nome){
 	if(estahVaziaCemiterio(l)) return 0;
 	
 	posRem = buscaBinariaC(l, nome);
-	p = l->pokemon[posRem];
+	p = &l->pokemon[posRem];
 
 	if(posRem >= 0){
 		for(i=posRem; i<l->cont; i++){
