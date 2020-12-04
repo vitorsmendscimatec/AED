@@ -10,12 +10,20 @@ int main(){
 	m1 = criarMao();
 	m2 = criarMao();
 
+
+
+	
+	while(a!=3){
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         "); printf("                   POKEMON");
+	printf("\n                                                                         "); printf("                   LAPA EDITION � 2020.");
+	printf("\n\n                                                                                            "); system("PAUSE");
 	a = iniciar();
+	}
 	printpokemon(11);
 	sleep(2);
-	printf("                                                       POKEMON LAPA EDITION");
-	system("cls");
 	
+	
+	system("cls");
 	switch(a){
 		case 1: {
 			int c=0;
@@ -23,6 +31,7 @@ int main(){
 				m1 = digitenome1();
 				m2 = digitenome2();	
 				c = strcmp(m1->nome, m2->nome);
+				
 				if(c==0) printf("Voce digitou o mesmo nome para os dois players!\n"); //deletar dela e aparecer dps de 1seg
 				system("cls");
 			}
@@ -36,15 +45,13 @@ int main(){
 		}
 		// Falta implementar os casos 2 e 3 (regras e sair)
 		case 2: {
-			//Mostrar regras
+			
+			//instru��es.
+			
 			break;
 		}
 		
-		case 3: {
-			//Sair do jogo
-			break;
-		}
-	}
+	}  		}
 	
 	return 0;
 }
