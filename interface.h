@@ -99,7 +99,7 @@ void escolha(Mao *m, int num){
 		printf("Sua mao esta completa!");  sleep(2); system("cls");
 		imprimirMaoHorizontal(m); 
 		printf("%s, estes sao os seus pokemons\n", m->nome);
-		sleep(4);
+		system("pause");
 
 	system("cls");
 }
@@ -224,7 +224,8 @@ int jogo(Mao* m1, Mao* m2){
 
 		estado = verifica_vitoria(m1, m2);
 		if(estado != 0){
-			return estado;		
+			return estado;	
+		}
 		cont++;	
 	}	
 	
