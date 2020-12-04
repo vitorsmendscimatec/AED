@@ -6,10 +6,10 @@
 int main(){
     POKEMON *Biancossauro, *Meowth, *lapossauro,* squirtle, *bulbasaur, *Charmander, *Pidgey, *Rattata, *Vulpix, *Poliwag, *Pikachu;
 	Biancossauro = cria_pokemon((char*)"Biancossauro", (char*)"Fire", 40, 5);
-	Meowth = cria_pokemon((char*)"Meowth", (char*)"Grass", 100, 50);
+	Meowth = cria_pokemon((char*)"Meowth", (char*)"Normal", 25, 10);
 	
     //Modelo sobre como criar um pokemon
-    lapossauro = cria_pokemon("Lapossauro", "Fire", 35, 10);
+    lapossauro = cria_pokemon("Lapossauro", "Normal", 100, 50);
     squirtle = cria_pokemon("Squirtle", "Water", 30, 7 );
     bulbasaur = cria_pokemon("Bulbasaur", "Grass", 30, 7 );
     Charmander = cria_pokemon("Charmander", "Fire", 30, 7 );

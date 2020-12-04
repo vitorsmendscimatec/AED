@@ -2,13 +2,13 @@
 #pragma GCC diagnostic ignored "-Wwrite-strings"
 
 int main(){
+	setlocale(LC_ALL, "Portuguese");
+	
 	int a, b;
 	Mao *m1;
 	Mao *m2;
 	m1 = criarMao();
 	m2 = criarMao();
-
-
 
 	a = iniciar();
 	printpokemon(11);
@@ -23,13 +23,13 @@ int main(){
 				m1 = digitenome1();
 				m2 = digitenome2();	
 				c = strcmp(m1->nome, m2->nome);
-				if(c==0) printf("Voc� digitou o mesmo nome para os dois players!\n"); //deletar dela e aparecer dps de 1seg
+				if(c==0) printf("Voce digitou o mesmo nome para os dois players!\n"); //deletar dela e aparecer dps de 1seg
 				system("cls");
 			}
 			
 			int v;
-			escolha(m1, 1, m1->nome);
-			escolha(m2, 2, m2->nome);
+			escolha(m1, 1);
+			escolha(m2, 2);
 			v = jogo(m1, m2);
 			if(v == 1) endgame(m1->nome);
 			else endgame(m2->nome);

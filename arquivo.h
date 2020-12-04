@@ -41,20 +41,23 @@ void del_all(){
 
 int tam_arquivo(){
 	FILE *pArq;
+	POKEMON p;
+	int cont = 0;
 	pArq = fopen("pokedex.bin", "rb");
 	if(pArq == NULL){
 		printf("Erro ao abrir arquivo\n");
 		exit(1);
 	}
+
 	
-	int cont = 0;
 	while(getc(pArq) != EOF){				//Loop enquanto n?o chegar ao fim do arquivo
-		POKEMON temp;
 		fseek(pArq, cont*sizeof(POKEMON), SEEK_SET);
-		fread(&temp, sizeof(POKEMON), 1, pArq);
+		fread(&p, sizeof(POKEMON), 1, pArq);
+		//OBS: deve ser alterado conforme mudan?as na struct POKEMON
+		//printf("%d - %s tipo: %s HP = %d\n", cont+1, p.nome, p.tipo, p.hp);	//Print formatado dos dados do tipo POKEMON
 		cont++;
 	}
-	fclose(pArq);
+	fclose (pArq);
 	return cont;
 }
 //busca um pokemon pela posicao informada, do 1? ao n?
