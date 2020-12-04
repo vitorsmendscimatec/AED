@@ -6,8 +6,8 @@ int a;
 
 char center[100];
 system("cls");
-printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
-printf("SEJA BEM VINDO AO POKEMON LAPA EDITION\n\n                                                                         DIGITE:\n                                                                         1- Iniciar jogo\n                                                                         2- Instrucoes\n                                                                         3- Sair do jogo\n\n          ");
+printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         "); printf("                   ");
+printf("SEJA BEM VINDO AO POKEMON LAPA EDITION\n\n                                                                                            DIGITE:\n                                                                                            1- Iniciar jogo\n                                                                                            2- Instrucões\n                                                                                            3- Sair do jogo\n\n          ");
 scanf("%d", &a);
 system("cls");
 if(a==1 || a==2 || a==3)return a;
@@ -31,9 +31,12 @@ printf("\n                                                                      
 Mao* digitenome1(void){
 Mao *m1;
 m1 = criarMao();
+
 printf("Digite o nome do Player 1: ");
 scanf(" %[^\n]", &m1->nome);
 fflush(stdin);
+
+
 return m1;
 }
 
@@ -52,9 +55,9 @@ void escolha(Mao *m, int num, char *nome){
 	POKEMON* temp;
 	for(i=5; i>0; i--){
 		system("cls");
-		printf("\n%s escolha 5 dentre os pokemons abaixo atraves de seus respectivos numero.\n", nome);
+		printf("\n%s escolha 5 dentre os pokemons abaixo através de seus respectivos números.\n", nome);
 		print_arquivo();
-		printf("\nDigite o numero do pokemon e em seguida pressione a teclar enter, eh permitido apenas 5 pokemons.\n");	
+		printf("\nDigite o número do pokemon e em seguida pressione a tecla ENTER, é permitido apenas 5 pokemons.\n");	
 			
 		
 		int pos;
@@ -71,24 +74,24 @@ void escolha(Mao *m, int num, char *nome){
 				printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
 				printf("RESGISTRANDO\n                                                                         %s entrou para o seu time!", temp->nome);  
 				printf("\n                                                                         ");
-				printf("Restam %d vagas em sua mao.", vagas);  sleep(2); system("cls");				
+				printf("Restam %d vagas em sua mão.", vagas);  sleep(2); system("cls");				
 			}
 		
 		
 			else{
 			vagas = i;
 			system("cls");
-			printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
-			printf("COMANDO INVALIDO!"); 
+			printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                                            ");
+			printf("COMANDO INVÁLIDO!"); 
 			i++;
 			sleep(2); system("cls");
-			printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+			printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                                            ");
 			printf("Restam %d vagas em sua mao.", vagas);  sleep(2); system("cls");
 				}
 		
 	}
-		printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
-		printf("Sua mao esta completa!");  sleep(2); system("cls");
+		printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                                            ");
+		printf("Sua mão está completa!");  sleep(2); system("cls");
 		printf("%s:\n", m->nome);
 		imprimirMaoHorizontal(m); sleep(5);
 	system("cls");
@@ -101,7 +104,7 @@ int jogo(Mao* m1, Mao* m2){
 	int esc;
 	system("cls");
 	for(int i = 3; i > 0; i--){
-		printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+		printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                                            ");
 		printf("O jogo inicia em: %d", i);
 		sleep(1);
 		system("cls");	
@@ -109,7 +112,7 @@ int jogo(Mao* m1, Mao* m2){
 
 	while(cont != 0){
 	system("cls");
-	printf("                                                                         Rodada %d\n", cont);
+	printf("                                                                                            Rodada %d\n", cont);
 	imprimirMaoHorizontal(m1);
 	imprimirMaoHorizontal(m2);
 	printf("\n%s escolha:\n1) Atacar um pokemon adversario\n2) Passar a vez  \n", m1->nome);
@@ -119,7 +122,7 @@ int jogo(Mao* m1, Mao* m2){
 	
 		case 1: {
 			system("cls");
-			printf("                                                                         Rodada %d\n", cont);
+			printf("                                                                                            Rodada %d\n", cont);
 			imprimirMaoHorizontal(m1);
 			imprimirMaoHorizontal(m2);
 			int pk1, pk2;
@@ -189,7 +192,7 @@ int jogo(Mao* m1, Mao* m2){
 		}
 		case 2: {
 			system("cls");
-			printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
+			printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                                            ");
 			printf("O jogador passou a vez.");
 				break;
 		}
