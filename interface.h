@@ -58,7 +58,7 @@ Mao* digitenome2(void){
 void escolha(Mao *m, int num){
 	int i;
 	POKEMON* temp;
-	for(i=1; i>0; i--){
+	for(i=5; i>0; i--){
 		system("cls");
 		printf("\n%s escolha 5 dentre os pokemons abaixo atraves de seus respectivos numero.\n", m->nome);
 		print_arquivo();
@@ -79,7 +79,7 @@ void escolha(Mao *m, int num){
 				printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
 				printf("RESGISTRANDO\n                                                                         %s entrou para o seu time!", temp->nome);  
 				printf("\n                                                                         ");
-				printf("Restam %d vagas em sua m�o.", vagas);  sleep(2); system("cls");				
+				printf("Restam %d vagas em sua mao.", vagas);  sleep(2); system("cls");				
 			}
 		
 		
@@ -87,7 +87,7 @@ void escolha(Mao *m, int num){
 			vagas = i;
 			system("cls");
 			printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                                            ");
-			printf("COMANDO INV�LIDO!"); 
+			printf("COMANDO INVALIDO!"); 
 			i++;
 			sleep(2); system("cls");
 			printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                                            ");
@@ -138,7 +138,7 @@ int jogo(Mao* m1, Mao* m2){
 				imprimirMaoHorizontal(m1);
 				imprimirMaoHorizontal(m2);
 				int pk1, pk2;
-				printf("\n%s Digite com qual pokemon voc� deseja atacar e aperte ENTER.\nDepois, digite o pokemon que voc� deseja atacar e aparte enter.\n", m1->nome);
+				printf("\n%s Digite com qual pokemon voce deseja atacar e aperte ENTER.\nDepois, digite o pokemon que voce deseja atacar e aperte enter.\n", m1->nome);
 				//VERIFICAR VALIDADE
 				do {
 					scanf(" %d", &pk1);	
@@ -190,7 +190,7 @@ int jogo(Mao* m1, Mao* m2){
 				imprimirMaoHorizontal(m1);
 				imprimirMaoHorizontal(m2);
 				int pk1, pk2;
-				printf("\n%s Digite com qual pokemon voc� deseja atacar e aperte ENTER.\nDepois, digite o pokemon que voc� deseja atacar e aparte enter.\n", m2->nome);
+				printf("\n%s Digite com qual pokemon voce deseja atacar e aperte ENTER.\nDepois, digite o pokemon que voce deseja atacar e aparte enter.\n", m2->nome);
 				
 				do {
 					scanf(" %d", &pk2);

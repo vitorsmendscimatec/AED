@@ -48,7 +48,7 @@ void gerencia_jogo(Mao* m1, Mao* m2, int a){
 		}
 		// Falta implementar os casos 2 e 3 (regras e sair)
 		case 2: {
-			//Mostrar regras
+			instrucoes();
 			break;
 		}
 		
