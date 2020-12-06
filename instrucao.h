@@ -13,7 +13,7 @@ void instrucoes(){
 
     printf("Em cada turno voce pode escolher entre atacar seu oponente ou passar sua vez...\n");
     printf("Ao atacar seu oponente, voce escolhe primeiro o indice do seu pokemon atacante e depois o indice do pokemon atacado...\n");
-    printf("Como todo bom treinador sabe, cada pokemon tem seu tipo, cada tipo ganha vantagem sobre o outro...\nFire -> Grass -> Water -> Fire\n");
+    printf("Como todo bom treinador sabe, cada pokemon tem seu tipo. Cada tipo ganha vantagem sobre o outro...\nFire -> Grass -> Water -> Fire\n");
     printf("Alem desses tres tipos tambem tem o Normal que eh nulo em efetividade contra todos...\n");
 
     system("pause");

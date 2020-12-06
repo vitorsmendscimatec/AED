@@ -46,9 +46,11 @@ void gerencia_jogo(Mao* m1, Mao* m2, int a){
 				printf("Ate a proxima!!!\n");
 			}
 		}
-		// Falta implementar os casos 2 e 3 (regras e sair)
+		
 		case 2: {
 			instrucoes();
+			a = iniciar();
+			gerencia_jogo(m1, m2, a);
 			break;
 		}
 		
@@ -76,7 +78,9 @@ int main(){
 	printpokemon(11);
 	sleep(2);
 	printf("                                                       POKEMON LAPA EDITION");
+	sleep(1);
 	system("cls");
+	
 	
 	gerencia_jogo(m1, m2, a);
 	
