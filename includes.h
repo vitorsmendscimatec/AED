@@ -9,6 +9,7 @@
 #include <unistd.h>
 #include <windows.h>
 
+#include "instrucao.h"
 #include "prints.h"
 #include "struct_pokemon.h"
 #include "lista_enc.h"
