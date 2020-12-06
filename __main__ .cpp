@@ -17,6 +17,7 @@ void gerencia_jogo(Mao* m1, Mao* m2, int a){
 			escolha(m1, 1);
 			escolha(m2, 2);
 			v = jogo(m1, m2);
+			system("cls");
 			if(v == 1) endgame(m1->nome);
 			else endgame(m2->nome);
 			system("cls");
