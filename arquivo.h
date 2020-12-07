@@ -24,7 +24,7 @@ void print_arquivo(){
 		fseek(pArq, cont*sizeof(POKEMON), SEEK_SET);
 		fread(&p, sizeof(POKEMON), 1, pArq);
 		//OBS: deve ser alterado conforme mudan?as na struct POKEMON
-		printf("%d - %s tipo: %s HP = %d\n", cont+1, p.nome, p.tipo, p.hp);	//Print formatado dos dados do tipo POKEMON
+		printf("%d - %s tipo: %s HP = %d  Atk = %d\n", cont+1, p.nome, p.tipo, p.hp, p.atk);	//Print formatado dos dados do tipo POKEMON
 		cont++;
 	}
 	
