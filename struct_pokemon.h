@@ -140,7 +140,7 @@ void atacar(POKEMON *atacante, POKEMON *atacado){
         efeito = 0.5;
         printf("%s atacou %s!\n Nao parece ter sido efetivo...\n", atacante->nome, atacado->nome);
     }else if(multiplicador == 2){
-		efeito = 1.5;
+		efeito = 2.0;
 		printf("%s atacou %s!\n O ataque foi superefetivo!!!\n", atacante->nome, atacado->nome);
     }
     sleep(2);
