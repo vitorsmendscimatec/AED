@@ -8,7 +8,7 @@ int iniciar(){
 	system("cls");
 	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                         ");
 	printf("SEJA BEM VINDO AO POKEMON LAPA EDITION\n\n                                                                         DIGITE:\n                                                                         1- Iniciar jogo\n                                                                         2- Instrucoes\n                                                                         3- Sair do jogo\n\n          ");
-	scanf("%d", &a);
+	scanf(" %d", &a);
 	system("cls");
 	if(a==1 || a==2 || a==3) return a;
 	else{
@@ -58,7 +58,7 @@ Mao* digitenome2(void){
 void escolha(Mao *m, int num){
 	int i;
 	POKEMON* temp;
-	for(i=5; i>0; i--){
+	for(i=5; i>0; i--){		//Aqui muda o n de pokemons na mao
 		system("cls");
 		printf("\n%s escolha 5 dentre os pokemons abaixo atraves de seus respectivos numero.\n", m->nome);
 		print_arquivo();
@@ -87,7 +87,8 @@ void escolha(Mao *m, int num){
 			vagas = i;
 			system("cls");
 			printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                                            ");
-			printf("COMANDO INVALIDO!"); 
+			printf("COMANDO INVALIDO!");
+			fflush(stdin); 
 			i++;
 			sleep(2); system("cls");
 			printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                                            ");
@@ -161,6 +162,13 @@ int jogo(Mao* m1, Mao* m2){
 				printf("O jogador passou a vez."); sleep(1); system("cls");
 				break;
 			}
+			
+			default:{
+				printf("Comando invalido\nVoce perdeu sua vez\n");
+				fflush(stdin);
+				system("pause");
+				break;
+			}
 		}
 		int cont2;
 		cont2 = tamanhoMao(m2);
@@ -213,6 +221,14 @@ int jogo(Mao* m1, Mao* m2){
 				printf("O jogador passou a vez.");
 				break;
 			}
+			
+			default:{
+				printf("Comando invalido\nVoce perdeu sua vez\n");
+				fflush(stdin);
+				system("pause");
+				break;
+			}
+				
 		}
 		
 		int cont1;
